@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ethers } from "ethers";
 import contractABI from "./abi.json";
+import "./App.css";
 
 function App() {
   const contractAddress = "0x6C747Ed0405c44f789DabA22db9a33645637F103";
@@ -26,7 +27,8 @@ function App() {
       try {
         const transaction = await contract.setMessage(inputMessage);
         await transaction.wait();
-        console.log("msg sent");
+        alert("Successful");
+        setInputMessage(" ");
       } catch (err) {
         console.error("Error:", err);
       }
@@ -62,6 +64,12 @@ function App() {
   return (
     <div className="App">
       <div>
+        <h1>My first dApp</h1>
+        <h2>Blockchain and Frontend integration</h2>
+        <h3>
+          <i>Message Getter and Setter Function call</i>
+        </h3>
+        <br /> <br />
         <input
           type="text"
           placeholder="Type your message"
