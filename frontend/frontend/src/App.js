@@ -11,7 +11,7 @@ function App() {
   }
 
   const [inputMessage, setInputMessage] = useState(""); // Renamed state variable
-  const [getmsg, setGetmsg] = useState("display Here");
+  const [getmsg, setGetmsg] = useState(" ");
   async function sendMessageToContract() {
     // Renamed function
     if (typeof window.ethereum !== "undefined") {
@@ -69,7 +69,7 @@ function App() {
         <h3>
           <i>Message Getter and Setter Function call</i>
         </h3>
-        <br /> <br />
+        <br />
         <input
           type="text"
           placeholder="Type your message"
@@ -83,6 +83,8 @@ function App() {
       </div>
       <div>
         <p>{getmsg}</p>
+
+        <button onClick={() => setGetmsg(" ")}>Clear message</button>
       </div>
     </div>
   );
